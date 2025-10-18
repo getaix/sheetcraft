@@ -5,7 +5,7 @@ description = "Flexible, intuitive Excel processing library for .xlsx and .xls"
 readme = "README.md"
 requires-python = ">=3.9"
 authors = [
-  { name = "Your Team", email = "dev@example.com" }
+  { name = "getaix", email = "dev@getaix.tech" }
 ]
 license = { file = "LICENSE" }
 keywords = ["excel", "xlsx", "xls", "openpyxl", "xlsxwriter", "xlwt", "template", "data validation", "images"]
