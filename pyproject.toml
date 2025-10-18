@@ -1,5 +1,5 @@
 [project]
-name = "fexcel"
+name = "getaix-fexcel"
 version = "0.1.0"
 description = "Flexible, intuitive Excel processing library for .xlsx and .xls"
 readme = "README.md"
