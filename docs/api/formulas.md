@@ -1,3 +1,3 @@
 # formulas
 
-::: fexcel.formulas
+::: sheetcraft.formulas

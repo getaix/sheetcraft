@@ -1,13 +1,13 @@
 from pathlib import Path
 
-from fexcel.template import ExcelTemplate
+from sheetcraft.template import ExcelTemplate
 
 
 def test_jinja_img_in_cell_renders_and_embeds(tmp_path):
     """使用 Jinja img 标签生成 in_cell 占位并成功渲染嵌入。"""
     from openpyxl import Workbook, load_workbook
     from jinja2 import Environment
-    from fexcel.jinja_ext import ImageTagExtension
+    from sheetcraft.jinja_ext import ImageTagExtension
 
     tpl = tmp_path / "tpl_jinja_in_cell.xlsx"
     out = tmp_path / "out_jinja_in_cell.xlsx"

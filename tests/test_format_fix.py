@@ -1,7 +1,7 @@
 import zipfile
 from pathlib import Path
 
-from fexcel.format_fix import _add_xdr_prefix, _normalize_sheet_rels, fix_xlsx, FormatFixConfig
+from sheetcraft.format_fix import _add_xdr_prefix, _normalize_sheet_rels, fix_xlsx, FormatFixConfig
 
 
 def test_add_xdr_prefix_on_wsdr_and_anchors():
@@ -70,7 +70,7 @@ def test_fix_xlsx_end_to_end(tmp_path):
     assert "Target=\"../drawings/drawing1.xml\"" in rels
 
 
-from fexcel.format_fix import (
+from sheetcraft.format_fix import (
     _ensure_xml_decl,
     _normalize_drawing_rels,
     _normalize_workbook_rels,

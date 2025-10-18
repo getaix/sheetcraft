@@ -1,4 +1,4 @@
-# fexcel
+# sheetcraft
 
 一个灵活、直观的 Python Excel 处理库。
 
@@ -16,23 +16,23 @@
 
 ```bash
 # 默认推荐：安装全部组件
-pip install 'fexcel[all]'
+pip install 'sheetcraft[all]'
 
 # 或仅安装核心（不含可选组件）
-pip install fexcel
+pip install sheetcraft
 
 # 分组件安装（可选）：
-pip install 'fexcel[images]'      # 图片支持（Pillow）
-pip install 'fexcel[xls]'         # 旧版 `.xls` 支持（xlwt/xlrd）
-pip install 'fexcel[fast]'        # 更快的 `.xlsx` 写入（xlsxwriter）
-pip install 'fexcel[template]'    # 模板渲染支持（Jinja2）
-pip install 'fexcel[formula]'     # 公式评估（xlcalculator）
+pip install 'sheetcraft[images]'      # 图片支持（Pillow）
+pip install 'sheetcraft[xls]'         # 旧版 `.xls` 支持（xlwt/xlrd）
+pip install 'sheetcraft[fast]'        # 更快的 `.xlsx` 写入（xlsxwriter）
+pip install 'sheetcraft[template]'    # 模板渲染支持（Jinja2）
+pip install 'sheetcraft[formula]'     # 公式评估（xlcalculator）
 ```
 
 ## Quick Start
 
 ```python
-from fexcel import ExcelWorkbook
+from sheetcraft import ExcelWorkbook
 
 # Create a fast .xlsx export using xlsxwriter
 wb = ExcelWorkbook(output_path='out.xlsx', fast=True)
@@ -55,7 +55,7 @@ rows = [
 wb.write_rows(ws, start_row=2, rows=rows)
 
 # Data validation for Qty column (whole number, >= 0)
-from fexcel.workbook import DataValidationSpec
+from sheetcraft.workbook import DataValidationSpec
 wb.add_data_validation(ws, 'B2:B100', DataValidationSpec(type='whole', operator='>=', formula1='0'))
 
 # Insert an image
@@ -81,7 +81,7 @@ Use Jinja2 placeholders in cell values and native `{% for %}` loops for repetiti
   - Multi-line block: put multiple template rows between `{% for %}` and `{% endfor %}`; capacity equals the number of template rows.
 
 ```python
-from fexcel import ExcelTemplate, ExcelWorkbook
+from sheetcraft import ExcelTemplate, ExcelWorkbook
 
 # Build a simple template that uses Jinja2 for (capacity=2)
 wb = ExcelWorkbook(output_path='template.xlsx')
@@ -119,7 +119,7 @@ renderer.render('template.xlsx', {
   - `format_fix_config=FormatFixConfig(...)` 配置具体规则。
 
 ```python
-from fexcel import ExcelWorkbook, FormatFixConfig
+from sheetcraft import ExcelWorkbook, FormatFixConfig
 
 wb = ExcelWorkbook(
     output_path='out.xlsx',
@@ -137,7 +137,7 @@ wb.save()  # 保存后自动进行格式修复（仅 .xlsx）
   - `format_fix_config=FormatFixConfig(...)` 配置具体规则。
 
 ```python
-from fexcel import ExcelTemplate, FormatFixConfig
+from sheetcraft import ExcelTemplate, FormatFixConfig
 
 renderer = ExcelTemplate(
     apply_format_fix=True,
@@ -182,7 +182,7 @@ Write formulas with `set_formula` or pass strings starting with `=` in `write_ce
 Optional evaluation using xlcalculator:
 
 ```python
-from fexcel.formulas import evaluate_xlsx_formulas
+from sheetcraft.formulas import evaluate_xlsx_formulas
 results = evaluate_xlsx_formulas('out.xlsx')
 for (sheet, cell), value in results.items():
     print(sheet, cell, value)
@@ -247,7 +247,7 @@ wb.save()
 ## Project Structure
 
 ```
-fexcel/
+sheetcraft/
   __init__.py
   workbook.py
   styles.py
@@ -290,4 +290,4 @@ README.md
 
 Apache License 2.0。详见 `LICENSE`。
 
-Repository: https://github.com/getaix/fexcel.git
+Repository: https://github.com/getaix/sheetcraft.git

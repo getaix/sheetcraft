@@ -1,4 +1,4 @@
-from fexcel import ExcelWorkbook
+from sheetcraft import ExcelWorkbook
 
 
 def main():

@@ -1,6 +1,6 @@
 import pytest
 
-from fexcel import ExcelWorkbook
+from sheetcraft import ExcelWorkbook
 
 
 @pytest.mark.performance

@@ -4,23 +4,23 @@
 
 ```bash
 # 默认推荐：安装全部组件
-pip install 'fexcel[all]'
+pip install 'sheetcraft[all]'
 
 # 或仅安装核心（不含可选组件）
-pip install fexcel
+pip install sheetcraft
 
 # 分组件安装（可选）：
-pip install 'fexcel[images]'      # 图片支持（Pillow）
-pip install 'fexcel[xls]'         # 旧版 `.xls` 支持（xlwt/xlrd）
-pip install 'fexcel[fast]'        # 更快的 `.xlsx` 写入（xlsxwriter）
-pip install 'fexcel[template]'    # 模板渲染支持（Jinja2）
-pip install 'fexcel[formula]'     # 公式评估（xlcalculator）
+pip install 'sheetcraft[images]'      # 图片支持（Pillow）
+pip install 'sheetcraft[xls]'         # 旧版 `.xls` 支持（xlwt/xlrd）
+pip install 'sheetcraft[fast]'        # 更快的 `.xlsx` 写入（xlsxwriter）
+pip install 'sheetcraft[template]'    # 模板渲染支持（Jinja2）
+pip install 'sheetcraft[formula]'     # 公式评估（xlcalculator）
 ```
 
 ## 导出示例（.xlsx）
 
 ```python
-from fexcel import ExcelWorkbook
+from sheetcraft import ExcelWorkbook
 
 wb = ExcelWorkbook(output_path='out.xlsx', fast=True)
 ws = wb.add_sheet('Report')
@@ -40,7 +40,7 @@ rows = [
 ]
 wb.write_rows(ws, start_row=2, rows=rows)
 
-from fexcel.workbook import DataValidationSpec
+from sheetcraft.workbook import DataValidationSpec
 wb.add_data_validation(ws, 'B2:B100', DataValidationSpec(type='whole', operator='>=', formula1='0'))
 
 wb.save()
@@ -49,7 +49,7 @@ wb.save()
 ## 模板渲染示例
 
 ```python
-from fexcel import ExcelTemplate, ExcelWorkbook
+from sheetcraft import ExcelTemplate, ExcelWorkbook
 
 # 构建简单模板（容量=2）
 wb = ExcelWorkbook(output_path='template.xlsx')
@@ -74,7 +74,7 @@ renderer.render('template.xlsx', {
 ## 可选：启用格式修复
 
 ```python
-from fexcel import ExcelWorkbook, FormatFixConfig
+from sheetcraft import ExcelWorkbook, FormatFixConfig
 
 wb = ExcelWorkbook(
     output_path='out.xlsx',

@@ -176,7 +176,7 @@ function injectPlaceholderImages() {
   const container = viewerRef.value
   if (!container) return
   const cells = container.querySelectorAll('td')
-  const marker = /__FEXCEL_IMG__\s*\{[^}]+\}/
+  const marker = /__SHEETCRAFT_IMG__\s*\{[^}]+\}/
   for (const td of Array.from(cells)) {
     const text = td.textContent || ''
     if (!marker.test(text)) continue
@@ -227,7 +227,7 @@ function injectDrawingImages() {
     content.style.position = 'relative'
 
     // 清理旧的覆盖元素，避免重复添加
-    for (const old of Array.from(content.querySelectorAll('.fexcel-img-overlay'))) {
+    for (const old of Array.from(content.querySelectorAll('.sheetcraft-img-overlay'))) {
       old.remove()
     }
 
@@ -311,7 +311,7 @@ function injectDrawingImages() {
       const url = URL.createObjectURL(blob)
 
       const img = document.createElement('img')
-      img.className = 'fexcel-img-overlay'
+      img.className = 'sheetcraft-img-overlay'
       img.style.position = 'absolute'
       img.style.left = `${left}px`
       img.style.top = `${top}px`

@@ -2,8 +2,8 @@ import os
 import sys
 import types
 
-from fexcel import ExcelWorkbook
-from fexcel.images import insert_image_xlsxwriter
+from sheetcraft import ExcelWorkbook
+from sheetcraft.images import insert_image_xlsxwriter
 
 
 def test_openpyxl_insert_image_without_pillow(monkeypatch, tmpfile):
@@ -45,7 +45,7 @@ def test_xlsxwriter_insert_image_options():
 
 
 import types
-from fexcel.images import (
+from sheetcraft.images import (
     insert_image_openpyxl,
     insert_image_xlwt,
     calc_fit_size_openpyxl,
@@ -124,7 +124,7 @@ def test_insert_image_xlwt_and_cleanup(monkeypatch, tmp_path):
         bmp_file.write_bytes(b"\x00")
         return str(bmp_file)
 
-    monkeypatch.setattr("fexcel.images.convert_image_to_bmp_temp", fake_convert)
+    monkeypatch.setattr("sheetcraft.images.convert_image_to_bmp_temp", fake_convert)
 
     class WS:
         def __init__(self):

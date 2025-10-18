@@ -1,5 +1,5 @@
-from fexcel import ExcelWorkbook
-from fexcel.workbook import DataValidationSpec
+from sheetcraft import ExcelWorkbook
+from sheetcraft.workbook import DataValidationSpec
 
 
 def main():

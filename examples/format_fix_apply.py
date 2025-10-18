@@ -1,4 +1,4 @@
-from fexcel import FormatFixConfig, fix_xlsx
+from sheetcraft import FormatFixConfig, fix_xlsx
 
 """
 Minimal example: apply format-fix rules to an existing .xlsx file.

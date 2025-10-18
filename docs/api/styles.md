@@ -1,3 +1,3 @@
 # styles
 
-::: fexcel.styles
+::: sheetcraft.styles

@@ -18,7 +18,7 @@
 
 import json
 from pathlib import Path
-from fexcel import ExcelTemplate, FormatFixConfig
+from sheetcraft import ExcelTemplate, FormatFixConfig
 
 
 def render_acceptance():

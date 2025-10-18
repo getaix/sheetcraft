@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from fexcel.template import ExcelTemplate
+from sheetcraft.template import ExcelTemplate
 
 
 def test_template_image_in_cell_clears_and_saves(tmp_path):
@@ -17,7 +17,7 @@ def test_template_image_in_cell_clears_and_saves(tmp_path):
     ws = wb.active
     ws.title = "IN_CELL"
     # 直接写入占位符字符串，跳过 Jinja 解析，覆盖渲染路径
-    ws.cell(row=2, column=2, value=f'__FEXCEL_IMG__{{"path":"{img_path}","in_cell":true}}')
+    ws.cell(row=2, column=2, value=f'__SHEETCRAFT_IMG__{{"path":"{img_path}","in_cell":true}}')
     wb.save(str(tpl))
 
     ExcelTemplate().render(str(tpl), {}, str(out))

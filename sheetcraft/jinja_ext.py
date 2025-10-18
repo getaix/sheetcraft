@@ -61,4 +61,4 @@ class ImageTagExtension(Extension):
         ):
             if k in kwargs and kwargs[k] is not None:
                 payload[k] = kwargs[k]
-        return "__FEXCEL_IMG__" + json.dumps(payload, ensure_ascii=False)
+        return "__SHEETCRAFT_IMG__" + json.dumps(payload, ensure_ascii=False)

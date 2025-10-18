@@ -4,7 +4,7 @@ import types
 
 import pytest
 
-from fexcel import ExcelWorkbook
+from sheetcraft import ExcelWorkbook
 
 
 def test_save_without_output_path_raises():
@@ -106,7 +106,7 @@ def test_insert_image_in_cell_xlsxwriter_keep_ratio_false(monkeypatch, tmpfile):
     monkeypatch.setitem(sys.modules, "PIL", pil)
 
     # 捕获插入调用以断言缩放参数
-    import fexcel.workbook as fwb
+    import sheetcraft.workbook as fwb
 
     captured = {}
 

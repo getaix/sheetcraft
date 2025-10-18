@@ -140,10 +140,10 @@ def xlsxwriter_format_from_dict(wb, style: Optional[StyleDict]):
     fmt = _to_xlsxwriter_dict(style)
 
     # 对重复样式进行缓存，减少 add_format 次数
-    cache = getattr(wb, "_fexcel_format_cache", None)
+    cache = getattr(wb, "_sheetcraft_format_cache", None)
     if cache is None:
         cache = {}
-        setattr(wb, "_fexcel_format_cache", cache)
+        setattr(wb, "_sheetcraft_format_cache", cache)
     key = tuple(sorted(fmt.items()))
     cached = cache.get(key)
     if cached is not None:

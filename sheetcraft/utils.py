@@ -45,7 +45,7 @@ def convert_image_to_bmp_temp(path: str) -> str:
         from PIL import Image
     except Exception as exc:
         raise RuntimeError(
-            "生成 BMP 需要 Pillow 依赖。请安装：pip install 'fexcel[images]'"
+            "生成 BMP 需要 Pillow 依赖。请安装：pip install 'sheetcraft[images]'"
         ) from exc
 
     img = Image.open(path)

@@ -160,7 +160,7 @@ class ExcelWorkbook:
                 import xlwt  # noqa: F401
             except Exception as exc:
                 raise RuntimeError(
-                    "xlwt is required for .xls support. Install with: pip install 'fexcel[xls]'"
+                    "xlwt is required for .xls support. Install with: pip install 'sheetcraft[xls]'"
                 ) from exc
             import xlwt
 

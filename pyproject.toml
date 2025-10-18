@@ -1,5 +1,5 @@
 [project]
-name = "getaix-fexcel"
+name = "sheetcraft"
 version = "0.1.0"
 description = "Flexible, intuitive Excel processing library for .xlsx and .xls"
 readme = "README.md"
@@ -51,13 +51,13 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/getaix/fexcel"
-Repository = "https://github.com/getaix/fexcel.git"
+Homepage = "https://github.com/getaix/sheetcraft"
+Repository = "https://github.com/getaix/sheetcraft.git"
 
 [build-system]
 requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools.packages.find]
-# 仅打包 fexcel 目录，排除非代码目录（如 out_images、examples、tests、docs）
-include = ["fexcel*"]
+# 仅打包 sheetcraft 目录，排除非代码目录（如 out_images、examples、tests、docs）
+include = ["sheetcraft*"]

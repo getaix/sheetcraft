@@ -1,6 +1,6 @@
 import json
 from pathlib import Path
-from fexcel import ExcelTemplate, ExcelWorkbook
+from sheetcraft import ExcelTemplate, ExcelWorkbook
 
 
 def build_block_template(path: str):
@@ -258,7 +258,7 @@ def test_render_string_fallback_for_invalid_jinja(tmp_path):
 
 def test_template_image_tag_inserts_and_clears_cell(tmp_path):
     from openpyxl import Workbook, load_workbook
-    from fexcel.template import ExcelTemplate
+    from sheetcraft.template import ExcelTemplate
     from pathlib import Path
 
     tpl_path = tmp_path / "tpl_img_tag.xlsx"
@@ -271,7 +271,7 @@ def test_template_image_tag_inserts_and_clears_cell(tmp_path):
     wb = Workbook()
     ws = wb.active
     ws.title = "IMGEXT"
-    ws.cell(row=1, column=1, value=f'__FEXCEL_IMG__{{"path":"{img_path}","fit":true}}')
+    ws.cell(row=1, column=1, value=f'__SHEETCRAFT_IMG__{{"path":"{img_path}","fit":true}}')
     wb.save(str(tpl_path))
 
     ExcelTemplate().render(str(tpl_path), {}, str(out_path))
@@ -289,7 +289,7 @@ def test_image_placeholder_disabled_clears_cell(tmp_path):
     wb = Workbook()
     ws = wb.active
     ws.title = "IMG"
-    ws.cell(row=1, column=1, value='__FEXCEL_IMG__{"path":"fake.png"}')
+    ws.cell(row=1, column=1, value='__SHEETCRAFT_IMG__{"path":"fake.png"}')
     wb.save(str(tpl))
 
     ExcelTemplate(enable_images=False).render(str(tpl), {}, str(out))
@@ -303,7 +303,7 @@ def test_image_placeholder_disabled_clears_cell(tmp_path):
 
 def test_template_image_payload_invalid_json_falls_back(tmp_path):
     from openpyxl import Workbook, load_workbook
-    from fexcel.template import ExcelTemplate
+    from sheetcraft.template import ExcelTemplate
 
     tpl_path = tmp_path / "tpl_img_payload.xlsx"
     out_path = tmp_path / "out_img_payload.xlsx"
@@ -312,7 +312,7 @@ def test_template_image_payload_invalid_json_falls_back(tmp_path):
     ws = wb.active
     ws.title = "IMGPAYLOAD"
     # 构造无效 JSON 的占位符，触发异常分支并回退为原字符串
-    payload = '__FEXCEL_IMG__{"path":}'
+    payload = '__SHEETCRAFT_IMG__{"path":}'
     ws.cell(row=1, column=1, value=payload)
     wb.save(str(tpl_path))
 
@@ -325,7 +325,7 @@ def test_template_image_payload_invalid_json_falls_back(tmp_path):
 
 def test_jinja_invalid_for_tag_skips_block(tmp_path):
     from openpyxl import Workbook, load_workbook
-    from fexcel.template import ExcelTemplate
+    from sheetcraft.template import ExcelTemplate
 
     tpl_path = tmp_path / "tpl_invalid_for.xlsx"
     out_path = tmp_path / "out_invalid_for.xlsx"
@@ -350,7 +350,7 @@ def test_jinja_invalid_for_tag_skips_block(tmp_path):
 
 def test_jinja_for_without_endfor_is_ignored(tmp_path):
     from openpyxl import Workbook, load_workbook
-    from fexcel.template import ExcelTemplate
+    from sheetcraft.template import ExcelTemplate
 
     tpl_path = tmp_path / "tpl_for_no_end.xlsx"
     out_path = tmp_path / "out_for_no_end.xlsx"
@@ -373,7 +373,7 @@ def test_jinja_for_without_endfor_is_ignored(tmp_path):
 
 def test_template_init_filters_applied(tmp_path):
     from openpyxl import Workbook, load_workbook
-    from fexcel.template import ExcelTemplate
+    from sheetcraft.template import ExcelTemplate
 
     tpl_path = tmp_path / "tpl_filters.xlsx"
     out_path = tmp_path / "out_filters.xlsx"

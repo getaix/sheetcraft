@@ -1,6 +1,6 @@
 import os
-from fexcel import ExcelWorkbook
-from fexcel.workbook import DataValidationSpec
+from sheetcraft import ExcelWorkbook
+from sheetcraft.workbook import DataValidationSpec
 
 
 def test_openpyxl_write_and_style(tmpfile):

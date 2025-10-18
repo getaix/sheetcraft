@@ -4,8 +4,8 @@ import builtins
 
 import pytest
 
-from fexcel.workbook import ExcelWorkbook, DataValidationSpec
-from fexcel.utils import get_column_letter_safe, convert_image_to_bmp_temp
+from sheetcraft.workbook import ExcelWorkbook, DataValidationSpec
+from sheetcraft.utils import get_column_letter_safe, convert_image_to_bmp_temp
 
 
 def _stub_xlsxwriter(monkeypatch):

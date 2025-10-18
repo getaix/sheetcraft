@@ -1,5 +1,5 @@
 from openpyxl import Workbook, load_workbook
-from fexcel.template import ExcelTemplate
+from sheetcraft.template import ExcelTemplate
 
 
 def test_template_render_with_format_fix_enabled(tmp_path):

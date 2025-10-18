@@ -4,7 +4,7 @@ import types
 
 import pytest
 
-from fexcel import ExcelWorkbook
+from sheetcraft import ExcelWorkbook
 
 
 def test_insert_image_in_cell_openpyxl_without_pillow(monkeypatch, tmpfile):

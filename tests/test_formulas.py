@@ -4,7 +4,7 @@ import builtins
 
 import pytest
 
-from fexcel.formulas import evaluate_xlsx_formulas
+from sheetcraft.formulas import evaluate_xlsx_formulas
 
 
 def test_formula_evaluation_with_stub(monkeypatch, tmpfile):

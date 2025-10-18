@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from fexcel.template import ExcelTemplate
+from sheetcraft.template import ExcelTemplate
 
 
 def test_jinja_for_dash_variant_and_endfor_dash(tmp_path):
@@ -71,7 +71,7 @@ def test_template_img_explicit_size_clears_cell(tmp_path):
     wb = Workbook()
     ws = wb.active
     ws.title = "IMGSIZE"
-    ws.cell(row=1, column=1, value=f'__FEXCEL_IMG__{{"path":"{img_path}","width":50,"height":30}}')
+    ws.cell(row=1, column=1, value=f'__SHEETCRAFT_IMG__{{"path":"{img_path}","width":50,"height":30}}')
     wb.save(str(tpl))
 
     ExcelTemplate().render(str(tpl), {}, str(out))

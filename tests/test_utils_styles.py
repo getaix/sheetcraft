@@ -3,12 +3,12 @@ import sys
 import types
 
 
-from fexcel.utils import (
+from sheetcraft.utils import (
     ensure_parent_dir,
     get_column_letter_safe,
     convert_image_to_bmp_temp,
 )
-from fexcel.styles import (
+from sheetcraft.styles import (
     apply_openpyxl_style,
     xlsxwriter_format_from_dict,
     xlwt_style_from_dict,

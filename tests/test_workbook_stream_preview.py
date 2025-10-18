@@ -1,6 +1,6 @@
 import os
 
-from fexcel import ExcelWorkbook
+from sheetcraft import ExcelWorkbook
 
 
 def test_openpyxl_write_only_mode_streams(tmpfile):

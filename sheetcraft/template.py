@@ -35,7 +35,7 @@ class ExcelTemplate:
             import jinja2  # noqa: F401
         except Exception as exc:
             raise RuntimeError(
-                "Jinja2 is required for template rendering. Install with: pip install 'fexcel[template]'"
+                "Jinja2 is required for template rendering. Install with: pip install 'sheetcraft[template]'"
             ) from exc
         import jinja2
 
@@ -82,7 +82,7 @@ class ExcelTemplate:
             self._process_jinja_for_blocks(ws, data)
 
             # 第二阶段：渲染剩余单元格中的模板变量 + 识别图片占位符
-            prefix = "__FEXCEL_IMG__"
+            prefix = "__SHEETCRAFT_IMG__"
             base_dir = os.path.dirname(os.path.abspath(template_path))
             for r in range(1, ws.max_row + 1):
                 for c in range(1, ws.max_column + 1):

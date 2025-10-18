@@ -1,4 +1,4 @@
-from fexcel import ExcelTemplate, ExcelWorkbook
+from sheetcraft import ExcelTemplate, ExcelWorkbook
 
 
 def build_simple_template(path: str):

@@ -1,3 +1,3 @@
 # utils
 
-::: fexcel.utils
+::: sheetcraft.utils

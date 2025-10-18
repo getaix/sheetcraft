@@ -17,4 +17,4 @@
 - openpyxl 路径下在有 Pillow 时读取原图尺寸计算比例；无 Pillow 时回退按单元格近似尺寸插入。
 - xlsxwriter 路径下缩放依赖已记录的行高/列宽（`set_row_height`/`set_column_width` 会被记录），否则按默认尺寸估算。
 
-::: fexcel.template.ExcelTemplate
+::: sheetcraft.template.ExcelTemplate

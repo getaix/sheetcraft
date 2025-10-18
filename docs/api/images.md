@@ -8,4 +8,4 @@
   - openpyxl 下优先用 Pillow 读取原图尺寸；无 Pillow 时退化为近似值。
   - xlsxwriter 下依赖记录的行高/列宽（`set_row_height`/`set_column_width`），否则按默认估算。
 
-::: fexcel.images
+::: sheetcraft.images

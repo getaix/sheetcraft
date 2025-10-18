@@ -1,7 +1,7 @@
 # ExcelWorkbook
 
-::: fexcel.workbook.ExcelWorkbook
+::: sheetcraft.workbook.ExcelWorkbook
 
 # DataValidationSpec
 
-::: fexcel.workbook.DataValidationSpec
+::: sheetcraft.workbook.DataValidationSpec

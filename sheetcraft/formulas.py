@@ -13,7 +13,7 @@ def evaluate_xlsx_formulas(path: str) -> Dict[Tuple[str, str], float]:
         from xlcalculator import ModelCompiler, Evaluator  # type: ignore
     except Exception as exc:
         raise RuntimeError(
-            "公式评估依赖 xlcalculator。请安装：pip install 'fexcel[formula]'"
+            "公式评估依赖 xlcalculator。请安装：pip install 'sheetcraft[formula]'"
         ) from exc
 
     mc = ModelCompiler()

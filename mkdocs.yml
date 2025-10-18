@@ -1,8 +1,8 @@
-site_name: fexcel
+site_name: sheetcraft
 site_description: 一个灵活、直观的 Python Excel 处理库
-site_url: https://github.com/getaix/fexcel
+site_url: https://github.com/getaix/sheetcraft
 site_author: getaix
-repo_url: https://github.com/getaix/fexcel
+repo_url: https://github.com/getaix/sheetcraft
 
 theme:
   name: material
