@@ -65,4 +65,4 @@ jobs:
           # If you want to test against TestPyPI, uncomment repository-url:
           # repository-url: https://test.pypi.org/legacy/
           # If not using Trusted Publishers, you can pass a token secret instead:
-          # password: ${{ secrets.PYPI_TOKEN }}
+          password: ${{ secrets.PYPI_TOKEN }}
