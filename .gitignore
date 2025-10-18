@@ -71,6 +71,9 @@ dmypy.json
 examples/**/*.xlsx
 !examples/templates/到货验收单.xlsx
 
+# MkDocs build output
+site/
+
 # Lockfiles
 *.lock
 uv.lock
