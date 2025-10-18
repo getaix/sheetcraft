@@ -1,0 +1,63 @@
+[project]
+name = "fexcel"
+version = "0.1.0"
+description = "Flexible, intuitive Excel processing library for .xlsx and .xls"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [
+  { name = "Your Team", email = "dev@example.com" }
+]
+license = { file = "LICENSE" }
+keywords = ["excel", "xlsx", "xls", "openpyxl", "xlsxwriter", "xlwt", "template", "data validation", "images"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Software Development :: Libraries",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: Apache Software License"
+]
+
+dependencies = [
+  "openpyxl>=3.1.2",
+]
+
+[project.optional-dependencies]
+images = ["Pillow>=9.0.0"]
+xls = ["xlwt>=1.3.0", "xlrd<2.0.0"]
+fast = ["XlsxWriter>=3.2.0"]
+template = ["Jinja2>=3.1.2"]
+formula = ["xlcalculator>=0.4.0"]
+all = [
+  "Pillow>=9.0.0",
+  "xlwt>=1.3.0",
+  "xlrd<2.0.0",
+  "XlsxWriter>=3.2.0",
+  "Jinja2>=3.1.2",
+  "xlcalculator>=0.4.0",
+]
+dev = ["pytest>=7.4.0", "pytest-cov>=4.1.0", "pytest-benchmark>=4.0.0"]
+
+[dependency-groups]
+# uv 会默认安装 dev 组，确保本地运行 pytest 可用
+# 这里保持与可选依赖一致，便于 pip/uv 两种工作流
+dev = [
+  "pytest>=7.4.0",
+  "pytest-cov>=4.1.0",
+  "pytest-benchmark>=4.0.0"
+]
+
+[project.urls]
+Homepage = "https://github.com/getaix/fexcel"
+Repository = "https://github.com/getaix/fexcel.git"
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+# 仅打包 fexcel 目录，排除非代码目录（如 out_images、examples、tests、docs）
+include = ["fexcel*"]

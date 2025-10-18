@@ -1,0 +1,40 @@
+site_name: fexcel
+site_description: 一个灵活、直观的 Python Excel 处理库
+site_url: https://github.com/getaix/fexcel
+site_author: getaix
+repo_url: https://github.com/getaix/fexcel
+
+theme:
+  name: material
+  language: zh
+
+nav:
+  - 概览: index.md
+  - 快速开始: quickstart.md
+  - API:
+      - ExcelWorkbook: api/workbook.md
+      - ExcelTemplate: api/template.md
+      - Format Fix: api/format_fix.md
+      - Styles: api/styles.md
+      - Utils: api/utils.md
+      - Images: api/images.md
+      - Formulas: api/formulas.md
+      - Validation: api/validation.md
+
+plugins:
+  - mkdocstrings:
+      handlers:
+        python:
+          paths:
+            - .
+          options:
+            show_source: false
+            heading_level: 2
+            merge_init_into_class: true
+            docstring_style: google
+
+markdown_extensions:
+  - admonition
+  - toc
+  - tables
+  - codehilite

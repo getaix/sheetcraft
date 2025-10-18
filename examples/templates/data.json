@@ -1,0 +1,40 @@
+{
+        "id": "RK20250922001",
+        "arrival_time": "2025-09-22 14:30:00",
+        "material_name": "电气设备一批",
+        "receiver": "张经理",
+        "project_name": "智能工厂建设项目",
+        "arrival_details": [
+            {
+                "material_detail_id": "1",
+                "equipment": "配电柜",
+                "quantity": 5,
+                "unit": "台",
+                "supplier": "诚信电气有限公司",
+                "equipment_model": "GGD-2-1000A"
+            },
+            {
+                "material_detail_id": "2",
+                "equipment": "电缆",
+                "quantity": 200,
+                "unit": "米",
+                "supplier": "远大电缆厂",
+                "equipment_model": "YJV-3*120+1*70"
+            },
+            {
+                "material_detail_id": "3",
+                "equipment": "照明灯具",
+                "quantity": 50,
+                "unit": "套",
+                "supplier": "光明照明科技",
+                "equipment_model": "LED-60W"
+            }
+        ],
+        "acceptance_details": [
+            {"item": "配电柜", "content": "外观完好，型号规格符合合同要求", "conclusion": "合格"},
+            {"item": "电缆", "content": "长度符合要求，无破损现象", "conclusion": "合格"},
+            {"item": "照明灯具", "content": "包装完整，数量正确", "conclusion": "合格"},
+            {"item": "配件及说明书", "content": "齐全且符合要求", "conclusion": "合格"}
+        ],
+        "owner_signature_id": "img.png"
+    }

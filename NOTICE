@@ -1,0 +1,22 @@
+Fexcel
+
+Copyright 2025 GetAIx contributors
+
+This product includes software developed by third parties. We gratefully acknowledge the authors and maintainers of the following open-source projects:
+
+- openpyxl — MIT License
+- XlsxWriter — BSD-2-Clause
+- xlwt — BSD License
+- xlrd — BSD License
+- Jinja2 — BSD-3-Clause
+- Pillow — HPND (MIT-CMU-like)
+- xlcalculator — MIT License
+
+Development tooling:
+- pytest — MIT License
+- pytest-cov — MIT License
+- pytest-benchmark — MIT License
+
+For full license texts and links, please see COMPLIANCE.md.
+
+Additional attribution notices required by third-party licenses (if any) should be placed here. If you distribute modified versions, please retain this NOTICE and add your own attribution as appropriate.

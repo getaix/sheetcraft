@@ -1,0 +1,3 @@
+[run]
+omit =
+    fexcel/jinja_ext.py

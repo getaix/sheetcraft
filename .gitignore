@@ -1,0 +1,76 @@
+# OS & Editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Python bytecode and C extensions
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+.Python
+
+# Build & packaging artifacts
+build/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+pip-wheel-metadata/
+*.egg-info/
+*.egg
+MANIFEST
+.installed.cfg
+
+# Virtual environments
+.env
+.env/
+.venv/
+venv/
+ENV/
+env/
+
+# Test, coverage, benchmarking
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+.pytest_cache/
+.tox/
+.nox/
+.hypothesis/
+.benchmarks/
+
+# Static analysis caches
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.pytype/
+.ruff_cache/
+
+# Generic caches and logs
+.cache/
+*.log
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Project-specific: Excel outputs
+/*.xlsx
+/rendered.xlsx
+examples/**/*.xlsx
+!examples/templates/到货验收单.xlsx
+
+# Lockfiles
+*.lock
+uv.lock
