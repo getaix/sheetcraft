@@ -30,6 +30,8 @@ jobs:
         run: |
           curl -LsSf https://astral.sh/uv/install.sh | sh
           uv pip install mkdocs mkdocs-material mkdocstrings mkdocstrings-python
+      - name: Install package with all extras
+        run: uv pip install -e '.[all]'
       - name: Build site
         run: uv run mkdocs build
       - name: Upload Pages artifact
