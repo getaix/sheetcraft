@@ -39,7 +39,8 @@ class ExcelTemplate:
             ) from exc
         import jinja2
 
-        self._env = jinja2.Environment(autoescape=False)
+        # 在变量最终输出阶段将 None 归一为空字符串，避免显示 "None"
+        self._env = jinja2.Environment(autoescape=False, finalize=self._finalize_value)
         # 图片处理开关
         self._enable_images = enable_images
         # 新增：格式修复参数
@@ -158,9 +159,13 @@ class ExcelTemplate:
                                 ws.cell(row=r, column=c).value = None
                             except Exception:
                                 # 未能正确解析占位符时（例如模板语法异常），降级为普通字符串渲染结果
-                                ws.cell(row=r, column=c).value = rendered
+                                ws.cell(row=r, column=c).value = (
+                                    None if (isinstance(rendered, str) and rendered == "") else rendered
+                                )
                         else:
-                            ws.cell(row=r, column=c).value = rendered
+                            ws.cell(row=r, column=c).value = (
+                                None if (isinstance(rendered, str) and rendered == "") else rendered
+                            )
             wb.save(output_path)
             # 可选：保存后应用格式修复（仅 .xlsx）
             if self._apply_format_fix:
@@ -179,6 +184,10 @@ class ExcelTemplate:
         except Exception:
             # 当单元格中包含未闭合的 Jinja 控制语句（如 {% for %}）时，优雅降级：原样返回，避免整体渲染失败。
             return tpl
+
+    # 新增：在变量最终输出阶段将 None -> ""
+    def _finalize_value(self, v: Any) -> Any:
+        return "" if v is None else v
 
     # 新增：内部辅助，提取单元格文本中的 `{% for ... %}` 子串
     def _extract_for_inner(self, s: str) -> Optional[str]:
@@ -371,7 +380,10 @@ class ExcelTemplate:
                 for (ar, ac), tpl in row_map.items():
                     if isinstance(tpl, str):
                         ctx = {blk.alias: item, **data, "loop": loop_ctx(i)}
-                        ws.cell(row=ar, column=ac).value = self._render_string(tpl, ctx)
+                        _val = self._render_string(tpl, ctx)
+                        ws.cell(row=ar, column=ac).value = (
+                            None if (isinstance(_val, str) and _val == "") else _val
+                        )
                     else:
                         ws.cell(row=ar, column=ac).value = tpl if i < length else None
 
