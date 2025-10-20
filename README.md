@@ -14,6 +14,8 @@
 
 ## Installation
 
+> 环境要求：Python >= 3.11
+
 ```bash
 # 默认推荐：安装全部组件
 pip install 'sheetcraft[all]'

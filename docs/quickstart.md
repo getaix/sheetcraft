@@ -1,20 +1,11 @@
-# 快速开始
+# Quickstart
+
+> 环境要求：Python >= 3.11
 
 ## 安装
 
 ```bash
-# 默认推荐：安装全部组件
 pip install 'sheetcraft[all]'
-
-# 或仅安装核心（不含可选组件）
-pip install sheetcraft
-
-# 分组件安装（可选）：
-pip install 'sheetcraft[images]'      # 图片支持（Pillow）
-pip install 'sheetcraft[xls]'         # 旧版 `.xls` 支持（xlwt/xlrd）
-pip install 'sheetcraft[fast]'        # 更快的 `.xlsx` 写入（xlsxwriter）
-pip install 'sheetcraft[template]'    # 模板渲染支持（Jinja2）
-pip install 'sheetcraft[formula]'     # 公式评估（xlcalculator）
 ```
 
 ## 导出示例（.xlsx）
