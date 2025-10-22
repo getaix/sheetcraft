@@ -5,7 +5,11 @@
 ## 安装
 
 ```bash
+# 常用组件（不含公式评估）
 pip install 'sheetcraft[all]'
+
+# 如需公式评估，请另外安装：
+pip install 'sheetcraft[formula]'
 ```
 
 ## 导出示例（.xlsx）
@@ -40,26 +44,10 @@ wb.save()
 ## 模板渲染示例
 
 ```python
-from sheetcraft import ExcelTemplate, ExcelWorkbook
-
-# 构建简单模板（容量=2）
-wb = ExcelWorkbook(output_path='template.xlsx')
-ws = wb.get_sheet()
-wb.write_cell(ws, 1, 1, '{{ title }}')
-wb.write_cell(ws, 3, 1, '{% for item in items %}')
-wb.write_row(ws, 4, ['{{ item.name }}', '{{ item.qty }}', '{{ item.price }}', '=B4*C4'])
-wb.write_row(ws, 5, ['{{ item.name }}', '{{ item.qty }}', '{{ item.price }}', '=B5*C5'])
-wb.write_cell(ws, 6, 1, '{% endfor %}')
-wb.save()
+from sheetcraft.template import ExcelTemplate
 
 renderer = ExcelTemplate()
-renderer.render('template.xlsx', {
-    'title': 'Sales Report',
-    'items': [
-        {'name': 'Widget A', 'qty': 5, 'price': 19.99},
-        {'name': 'Widget B', 'qty': 2, 'price': 29.50},
-    ]
-}, 'rendered.xlsx')
+# 具体模板和数据示例请参考 README 与 docs/api
 ```
 
 ## 可选：启用格式修复
