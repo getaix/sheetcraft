@@ -21,7 +21,7 @@
 pip install 'sheetcraft[all]'
 
 # 如需公式评估，请另外安装：
-pip install 'sheetcraft[formula]'
+pip install xlcalculator
 
 # 或仅安装核心（不含可选组件）
 pip install sheetcraft
@@ -31,7 +31,7 @@ pip install 'sheetcraft[images]'      # 图片支持（Pillow）
 pip install 'sheetcraft[xls]'         # 旧版 `.xls` 支持（xlwt/xlrd）
 pip install 'sheetcraft[fast]'        # 更快的 `.xlsx` 写入（xlsxwriter）
 pip install 'sheetcraft[template]'    # 模板渲染支持（Jinja2）
-pip install 'sheetcraft[formula]'     # 公式评估（xlcalculator）
+pip install xlcalculator               # 公式评估（xlcalculator）
 ```
 
 ## Quick Start

@@ -9,7 +9,7 @@
 pip install 'sheetcraft[all]'
 
 # 如需公式评估，请另外安装：
-pip install 'sheetcraft[formula]'
+pip install xlcalculator
 ```
 
 ## 导出示例（.xlsx）
